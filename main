@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+char stack[20];
+int top=-1;
+int a;
+
+int priority(char a) {				
+    if (a == '(')
+        return 0;
+    else if (a == '*' || a == '/')
+        return 1; 
+    else if (a == '+' || a == '-')
+        return 2;
+    else
+    	return -1;
+}
+
+void push(char a){	//push ke dalam stack
+	top=top+1;
+	top=a;
+	stack[++top]=a;
+}
+char pop(){		//pop dari stack
+	char data;
+	if(top==-1){
+		return -1;
+	}else{
+		data=stack[top];
+		top--;
+		return data;
+	}
+}
