@@ -1,3 +1,9 @@
+//Evaluate expression using stack.cpp
+//Gema Annisa Hermastuti (1817051020)
+//Cahya Hidayatulloh (1817051046)
+//Afifah (1817051068)
+//Yulivia Annisa P. (1857051008)
+
 #include <iostream>
 using namespace std;
 
@@ -41,3 +47,14 @@ int main(){
 	cin>>prsmn;
 	baru=prsmn;
 	int i=0;
+	
+	while(prsmn[i++]!='\0'){
+		if(prsmn[i]=='('){
+			push(prsmn[i]);
+		}else if(isalnum(prsmn[i])){
+			postfix[j++]=prsmn[i];
+		}else if(prsmn[i]=='+'||prsmn[i]=='-'||prsmn[i]=='*'||prsmn[i]=='/'){
+			if((priority(stack[top]))>=priority(prsmn[i])){
+				postfix[j++]=pop();
+				push(prsmn[i]);
+			
