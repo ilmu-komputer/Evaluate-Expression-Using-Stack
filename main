@@ -57,4 +57,15 @@ int main(){
 			if((priority(stack[top]))>=priority(prsmn[i])){
 				postfix[j++]=pop();
 				push(prsmn[i]);
-			
+			}else{
+				break;
+			}	
+		}else if(prsmn[i]==')'){
+			while((a=pop())!='('){
+				postfix[j++]=a;
+			}
+		}
+		i++;
+	}
+	cout<<"Postfix = "<<postfix<<endl;
+}	
