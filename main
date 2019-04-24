@@ -31,3 +31,13 @@ char pop(){		//pop dari stack
 		return data;
 	}
 }
+int main(){
+	char postfix[20];
+	int j=0;
+	char a;
+	char prsmn[20];
+	char *baru;
+	cout<<"Masukkan persamaan infix : ";
+	cin>>prsmn;
+	baru=prsmn;
+	int i=0;
